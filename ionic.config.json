@@ -1,0 +1,7 @@
+{
+  "name": "appSonidos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
