@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Animales
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let animal of animales; let i = index">
+      <ion-item (click)="reproducir( animal )">
+        <div class="content-item">
+          <div class="content-animal">
+            <ion-avatar item-left>
+              <img [src]="animal.imagen">
+            </ion-avatar>
+            <h2>{{animal.nombre}}</h2>
+          </div>
+          <div>
+            <ion-icon *ngIf="!animal.reproduciendo" name="play" item-right></ion-icon>
+            <ion-icon *ngIf="animal.reproduciendo" name="pause" item-right></ion-icon>
+          </div>
+        </div>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

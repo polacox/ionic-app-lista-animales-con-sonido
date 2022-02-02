@@ -25,3 +25,14 @@
 #container a {
   text-decoration: none;
 }
+
+.content-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: auto;
+}
+
+.content-animal {
+  display: flex;
+}
